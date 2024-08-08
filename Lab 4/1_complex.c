@@ -19,9 +19,7 @@ int main() {
 	scanf("%d%d",&a.real,&a.img);
 	printf("enter second complex number: ");
 	scanf("%d%d",&b.real,&b.img);
-	fflush(stdin);
 	printf("enter operation (1 for addition, 2 for multiplication, 3 for subtraction): ");
-	fflush(stdin);
 	scanf("%d",&operation);
 	switch(operation) {
 	case(1):
