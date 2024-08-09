@@ -23,7 +23,8 @@ void display_student(Student *s) {
 }
 
 void sort_students(Student *s, int n) {
-	int i, j, temp;
+	int i, j;
+ Student temp;
 	for(i=0;i<n-1;i++) {
 		for(j=0;j<n-i-1;j++) {
 			if(s[j].roll_no>s[j+1].roll_no) {
