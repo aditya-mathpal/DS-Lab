@@ -34,3 +34,10 @@ int main() {
 	}
 	return 0;
 }
+/*
+output:
+enter first complex number: 2 3
+enter second complex number: 3 4
+enter operation (1 for addition, 2 for multiplication, 3 for subtraction): 1
+2+(3i) + 3+(4i) = 5+(7i)
+*/
