@@ -61,3 +61,20 @@ int main() {
 	free(b);
 	return 0;
 }
+
+/*
+output:
+enter dimensions of first matrix: 2 2
+enter dimensions of second matrix: 2 2
+enter all the elements of the first matrix row-wise: 1 2 3 4
+enter all the elements of the second matrix row-wise: 5 6 7 8
+first matrix is:
+1 2 
+3 4 
+second matrix is:
+5 6 
+7 8 
+matrix product is:
+19 22 
+43 50
+*/
