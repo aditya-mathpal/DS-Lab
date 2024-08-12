@@ -37,6 +37,7 @@ int main() {
 }
 
 /*
+output:
 enter size of array: 3
 enter elements of array: 2 3 1
 sorted array is: 1 2 3
