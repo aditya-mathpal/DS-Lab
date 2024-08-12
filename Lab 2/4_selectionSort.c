@@ -1,29 +1,24 @@
 #include<stdio.h>
 
-int findMin(int* a, int n) {
-	int b=*a, i, index;
-	for(i=1;i<n;i++)
-		if(a[i]<b) index = i;;
+int findMin(int* a, int start, int n) {
+	int index = start, i;
+	for(i=start+1;i<n;i++)
+		if(a[i]<a[index]) index = i;
 	return index;
 }
 
-void swap(int a,int b) {
-	int temp = a;
-	a = b;
-	b = temp;
+void swap(int *a,int *b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
 }
 
-void SelectionSort(int* a, int n) {
-	static int i=0;
-	if(i==n-1) return;
-	int min = findMin(a,n-i);
-	if(min==i) {
-		i++;
-		return(SelectionSort((a+1),n));
-	}
-	swap(a[i],a[min]);
-	i++;
-	return(SelectionSort((a+1),n));
+void SelectionSort(int* a, int start, int n) {
+	if(start>=n-1) return;
+	int min = findMin(a,start,n);
+	if(min!=start)
+		swap(a+start,a+min);
+	return(SelectionSort(a,start+1,n));
 }
 
 int main() {
@@ -33,9 +28,16 @@ int main() {
 	printf("enter elements of array: ");
 	for(i=0;i<n;i++)
 		scanf("%d",&a[i]);
-	SelectionSort(a,n);
+	SelectionSort(a,0,n);
 	printf("sorted array is: ");
 	for(i=0;i<n;i++)
 		printf("%d ",a[i]);
+	printf("\n");
 	return 0;
 }
+
+/*
+enter size of array: 3
+enter elements of array: 2 3 1
+sorted array is: 1 2 3
+*/
