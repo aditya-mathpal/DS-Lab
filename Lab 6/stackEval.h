@@ -38,3 +38,9 @@ int eval(char o, int a, int b) {
 	case '%': return (a%b); break;
 	}
 }
+
+int precedence(char o) {	//added for Q2
+    if(o == '+' || o == '-') return 1;
+    if(o == '*' || o == '/' || o == '%') return 2;
+    return 0;
+}
