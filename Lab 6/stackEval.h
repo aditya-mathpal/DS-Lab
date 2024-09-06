@@ -14,11 +14,11 @@ void init(stack* s) {
 }
 
 int isEmpty(stack* s) {
-	return(s->top==-1)
+	return(s->top==-1);
 }
 
 int isFull(stack* s) {
-	return(s->top==MAX-1)
+	return(s->top==MAX-1);
 }
 
 void push(stack *s, int x) {
