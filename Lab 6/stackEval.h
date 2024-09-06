@@ -4,7 +4,7 @@
 
 #define MAX 20
 
-typedef struct stack {
+typedef struct {
 	int s[MAX];
 	int top;
 }stack;
@@ -14,15 +14,11 @@ void init(stack* s) {
 }
 
 int isEmpty(stack* s) {
-	if(s->top==-1)
-		return 1;
-	return 0;
+	return(s->top==-1)
 }
 
 int isFull(stack* s) {
-	if(s->top==MAX-1)
-		return 1;
-	return 0;
+	return(s->top==MAX-1)
 }
 
 void push(stack *s, int x) {
