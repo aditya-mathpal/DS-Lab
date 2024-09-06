@@ -1,6 +1,3 @@
-#include<stdio.h>
-#include<ctype.h>
-#include<string.h>
 #include "stackEval.h"
 
 int main() {
@@ -27,3 +24,9 @@ int main() {
     while(!isEmpty(&opnd)) printf("%c",pop(&opnd));
     return 0;
 }
+
+/*
+output:
+enter an infix expression (only single digit operands): 3*2+1
+The prefix expression is: +*321
+*/

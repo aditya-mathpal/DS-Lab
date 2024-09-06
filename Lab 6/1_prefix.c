@@ -1,6 +1,3 @@
-#include<stdio.h>
-#include<ctype.h>
-#include<string.h>
 #include "stackEval.h"
 
 int main() {
@@ -23,3 +20,8 @@ int main() {
 	printf("Result is %d\n",pop(&s));
 	return 0;
 }
+
+/*
+enter a prefix expression (only single digit operands): +*321
+Result is 7
+*/

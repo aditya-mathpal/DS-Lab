@@ -1,3 +1,7 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+
 #define MAX 20
 
 typedef struct stack {
