@@ -5,14 +5,14 @@
 
 int main() {
     stack opnd,opr,in;
-	char exp[100],x,c;
+	char x;
 	int i;
     init(&in);
     init(&opnd);
     init(&opr);
 	printf("enter an infix expression (only single digit operands): ");
-    while((c = getchar()) != '\n') {
-        push(&in,c);
+    while((x = getchar()) != '\n') {
+        push(&in,x);
     }
     while(!isEmpty(&in)) {
         if(isdigit(x=pop(&in))) push(&opnd,x);
