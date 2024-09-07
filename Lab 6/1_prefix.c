@@ -1,4 +1,4 @@
-#include "stackEval.h"
+#include "stack.h"
 
 int main() {
 	stack s;
