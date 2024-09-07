@@ -10,7 +10,6 @@ int main() {
     while((x = getchar()) != '\n') push(&in,x);
     while(!isEmpty(&in)) {
         if(isdigit(x=pop(&in))) push(&opnd,x);
-        //need to fix this else block
         else {
             out[j++] = pop(&opnd);
             out[j++] = pop(&opnd);
