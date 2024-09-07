@@ -29,10 +29,6 @@ int pop(stack *s) {
 	return(s->s[s->top--]);
 }
 
-//for Q4
-
-
-
 int eval(char o, int a, int b) {
 	switch(o) {
 	case '+': return (a+b); break;
