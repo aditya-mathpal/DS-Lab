@@ -1,4 +1,4 @@
-#include "stackEval.h"
+#include "stack.h"
 
 int main() {
     stack opnd,opr,in;
@@ -8,9 +8,7 @@ int main() {
     init(&opnd);
     init(&opr);
 	printf("enter an infix expression (only single digit operands): ");
-    while((x = getchar()) != '\n') {
-        push(&in,x);
-    }
+    while((x = getchar()) != '\n') push(&in,x);
     while(!isEmpty(&in)) {
         if(isdigit(x=pop(&in))) push(&opnd,x);
         else if(isEmpty(&opr) || precedence(x) > precedence(opr.s[opr.top])) push(&opr,x);

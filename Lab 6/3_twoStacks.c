@@ -12,3 +12,11 @@ int main() {
     displayTwo(&s);
     return 0;
 }
+
+/*
+output:
+Stack 1 elements: 1 
+Stack 2 elements: 3 2
+3 popped
+Stack 2 elements: 2
+*/
