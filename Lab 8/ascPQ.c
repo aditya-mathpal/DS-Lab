@@ -47,10 +47,10 @@ void displaypq(ascPQ *apq) {
 
 int main() {
     ascPQ *apq = (ascPQ*)malloc(sizeof(ascPQ));
-    int x, flag=1;
+    int x;
     initpq(apq);
     printf("Enter 1 to insert, 2 to delete smallest element, 3 to display, 4 to exit:\n");
-    while(flag) {
+    do {
         printf("> ");
         scanf("%d",&x);
         switch(x) {
@@ -67,15 +67,13 @@ int main() {
             displaypq(apq);
             break;
         case 4:
-            flag = 0;
-            break;
-        case 5:
             printf("Exiting...\n");
             break;
         default:
             printf("Invalid input..\n");
         }
     }
+    while(x!=4);
     free(apq);
     return 0;
 }
@@ -87,14 +85,13 @@ Enter 1 to insert, 2 to delete smallest element, 3 to display, 4 to exit:
 > 1
 Enter element to insert: 7
 > 1
-Enter element to insert: 4
-> 1
 Enter element to insert: 8
 > 3
-Queue contents: 7       4       8
+Queue contents: 7	8	
 > 2
-4 removed
+7 removed
 > 3
-Queue contents: 7       8
+Queue contents: 8	
 > 4
+Exiting...
 */
