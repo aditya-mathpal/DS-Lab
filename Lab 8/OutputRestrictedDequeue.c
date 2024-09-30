@@ -106,8 +106,8 @@ int main() {
         default:
             printf("Invalid input..\n");
         }
-    } while (x != 5);
-
+    }
+    while (x != 5);
     return 0;
 }
 

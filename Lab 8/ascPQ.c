@@ -69,7 +69,11 @@ int main() {
         case 4:
             flag = 0;
             break;
-        default: break;
+        case 5:
+            printf("Exiting...\n");
+            break;
+        default:
+            printf("Invalid input..\n");
         }
     }
     free(apq);
