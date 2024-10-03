@@ -55,9 +55,10 @@ void display(queue q) {
 }
 
 void reverse(queue *q) {
-    int arr[MAX],count;
-    for(count=0;!isEmpty(q);count++) arr[count] = dequeue(q);
-    while(count--) enqueue(q,arr[count]);
+    if(isEmpty(q)) return;
+    int x = dequeue(q);
+    reverse(q);
+    enqueue(q,x);
 }
 
 int main() {
