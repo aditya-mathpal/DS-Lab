@@ -7,15 +7,12 @@ typedef struct node {
 	struct node* rlink;
 } *NODE;
 
-typedef struct header {
-	NODE llink, rlink;
-} *HEAD;
-
-HEAD getHead() {
-	HEAD header = (HEAD)malloc(sizeof(HEAD));
+NODE getHead() {
+	NODE header = (NODE)malloc(sizeof(struct node));
 	header->llink = header->rlink = header;
+	header->data = 0;
 	return header;
-} 
+}
 
 NODE getNode(int x) {
     NODE temp = (NODE)malloc(sizeof(struct node));
@@ -24,7 +21,7 @@ NODE getNode(int x) {
     return temp;
 }
 
-HEAD insertR(HEAD header, int x) {
+NODE insertR(NODE header, int x) {
 	NODE temp = getNode(x);
 	if(header->rlink==header) {
 		header->rlink = temp;
@@ -39,12 +36,13 @@ HEAD insertR(HEAD header, int x) {
         temp->rlink = header;
         header->llink = temp;
     }
+	header->data++;
 	return header;
 }
 
-HEAD add(HEAD a, HEAD b) {
+NODE add(NODE a, NODE b) {
 	NODE nodeA = a->rlink, nodeB = b->rlink;
-	HEAD c = getHead();
+	NODE c = getHead();
 	int carry=0, sum;
 	while (nodeA!=a || nodeB!=b || carry) {
         sum = carry;
@@ -62,14 +60,17 @@ HEAD add(HEAD a, HEAD b) {
 	return c;
 }
 
-void displayReversed(NODE x) {
-	if(x == NULL || x == x->rlink) return;
-	displayReversed(x->rlink);
-	printf("->%d",x->data);
+void displayReversed(NODE header) {
+	NODE temp = header->llink;
+	if(temp==header) printf("0");
+	while(temp!=header) {
+		printf("%d",temp->data);
+		temp = temp->llink;
+	}
 }
 
 int main() {
-	HEAD list1 = getHead(), list2 = getHead();
+	NODE list1 = getHead(), list2 = getHead();
 	int num1, num2;
 	printf("Enter two positive integers: ");
 	scanf("%d%d",&num1,&num2);
@@ -81,7 +82,14 @@ int main() {
 		list2 = insertR(list2,num2%10);
 		num2/=10;
 	}
-	HEAD sum = add(list1,list2);
-	displayReversed(sum->rlink);
+	NODE sum = add(list1,list2);
+	printf("Sum: ");
+	displayReversed(sum);
 	return 0;
 }
+
+/*
+output:
+Enter two positive integers: 99 99
+Sum: 198
+*/
