@@ -103,3 +103,9 @@ int main() {
     freeTree(root);
     return 0;
 }
+
+/*
+output:
+Enter a postfix expression (use single characters for operands): 23*3/         
+Evaluated Result: 2
+*/
